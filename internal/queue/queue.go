@@ -12,13 +12,13 @@ const (
 	RabbitMQ TypeQueue = iota
 )
 
-type ConnectionQueue interface {
+type IQueue interface {
 	Publish([]byte) error
 	Consume(chan<- MessageDto) error
 }
 
 type Queue struct {
-	conn ConnectionQueue
+	conn IQueue
 }
 
 func New(typeQueue TypeQueue, cfg any) (queue *Queue, err error) {
