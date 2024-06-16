@@ -1,4 +1,4 @@
-CREATE TABLE users {
+CREATE TABLE users (
     id SERIAL,
     name VARCHAR(80) NOT NULL,
     login VARCHAR(100) NOT NULL UNIQUE,
@@ -8,4 +8,4 @@ CREATE TABLE users {
     updated_at TIMESTAMP NOT NULL,
     deleted BOOL DEFAULT FALSE,
     PRIMARY KEY (id)
-}
+);
